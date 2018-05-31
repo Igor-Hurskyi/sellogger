@@ -25,11 +25,13 @@ public class SimpleTest {
     @Test
     private void simpleAssert() throws InterruptedException {
         MainPage mp = new MainPage(driver);
+
+        mp.switchToEasyMode();
         mp.typeToSearchbox("facebook.com");
         mp.clickOnSearchButton();
+        Thread.sleep(5000);
 
         Assert.assertEquals(true, true);
-        Thread.sleep(5000);
     }
 
     @AfterTest
